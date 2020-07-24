@@ -1,0 +1,98 @@
+R headache prevention with renv
+========================================================
+author: Ben Artin
+date: July 28 2020
+autosize: true
+
+😕
+========================================================
+
+“I tried running the code that you sent me, but I get an error. It says there is no package called ‘something’.”
+
+🙁
+========================================================
+
+“Your code used to work fine, but then I updated my packages and now it doesn't work anymore.”
+
+☹️
+========================================================
+
+“Sorry to email you this late, but I can't get the code from last week's lecture to work, and the homework is due tomorrow.”
+
+Why?
+========================================================
+
+1. Code requires R packages (“dependencies”) to run
+2. Sending someone code doesn’t tell them which packages the code requires
+
+renv
+========================================================
+
+1. You use `renv` to store information about dependencies with your code
+2. Other people use `renv` to install the exact same versions of the dependencies before running your code
+
+Getting started
+========================================================
+
+1. Make an RStudio project
+2. Install `renv`
+
+```{r}
+install.packages("renv")
+```
+
+3. Initialize `renv`
+
+```{r}
+renv::init()
+```
+
+Installing packages
+========================================================
+
+* You can use all the usual tools (`install.packages`, `devtools::install_github`, etc)
+* Packages are installed *only* for that project
+
+Saving information about dependencies
+========================================================
+
+* `renv::snapshot()` saves dependency information
+
+Reinstalling dependencies
+========================================================
+
+* `renv::restore()` restores dependencies
+
+Overall workflow
+========================================================
+
+You:
+
+1. Create an RStudio project
+2. `renv::init()`
+3. Work on your code
+4. `renv::snapshot()`
+5. `renv::clean()`
+6. Send code to your collaborators
+   * Best option: use git
+   * Acceptable option: zip your project folder **except** `renv/library` and `renv/staging`.
+   * Don't: just send them your .R files
+
+Collaborator:
+
+1. Open the RStudio project
+2. `renv::restore()`
+3. The end
+
+renv vs R markdown
+========================================================
+
+* `renv`lets your collaborators run your R markdown files
+* Converting to HTML/PDF/Word requires additional dependencies
+* Consider adding a `dependencies.R` file to your project with the following contents:
+
+```
+library(Rcpp)
+library(rprojroot)
+```
+
