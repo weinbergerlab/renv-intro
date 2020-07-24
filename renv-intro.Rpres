@@ -34,14 +34,12 @@ renv
 Getting started
 ========================================================
 
-1. Make an RStudio project
-2. Install `renv`
-
-```{r}
+* Make an RStudio project
+* Install `renv`
+```{r results=FALSE}
 install.packages("renv")
 ```
-
-3. Initialize `renv`
+* Initialize `renv`
 
 ```{r}
 renv::init()
@@ -87,7 +85,7 @@ Collaborator:
 renv vs R markdown
 ========================================================
 
-* `renv`lets your collaborators run your R markdown files
+* `renv` lets your collaborators run your R markdown files
 * Converting to HTML/PDF/Word requires additional dependencies
 * Consider adding a `dependencies.R` file to your project with the following contents:
 
