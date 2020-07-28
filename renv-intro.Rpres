@@ -23,7 +23,7 @@ Why?
 ========================================================
 
 1. Code requires R packages (“dependencies”) to run
-2. Sending someone code doesn’t tell them which packages the code requires
+2. Sending someone code doesn’t tell them which versions of which packages you used to run the code
 
 renv
 ========================================================
@@ -55,32 +55,31 @@ Saving information about dependencies
 ========================================================
 
 * `renv::snapshot()` saves dependency information
+* It only saves packages you installed *and* used in your code
 
 Reinstalling dependencies
 ========================================================
 
 * `renv::restore()` restores dependencies
 
-Overall workflow
+Your workflow
 ========================================================
-
-You:
 
 1. Create an RStudio project
 2. `renv::init()`
 3. Work on your code
 4. `renv::snapshot()`
-5. `renv::clean()`
-6. Send code to your collaborators
+5. Send code to your collaborators
    * Best option: use git
    * Acceptable option: zip your project folder **except** `renv/library` and `renv/staging`.
-   * Don't: just send them your .R files
+   * Don't: just send them your R files
 
-Collaborator:
+Collaborator workflow
+========================================================
 
 1. Open the RStudio project
 2. `renv::restore()`
-3. The end
+3. Run the code
 
 renv vs R markdown
 ========================================================
