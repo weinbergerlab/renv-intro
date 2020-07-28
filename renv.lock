@@ -100,13 +100,6 @@
       "Repository": "CRAN",
       "Hash": "e87a35ec73b157552814869f45a63aa3"
     },
-    "minimax": {
-      "Package": "minimax",
-      "Version": "1.0",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "e1f876b2f044448e071a4c444066be2e"
-    },
     "outliers": {
       "Package": "outliers",
       "Version": "0.14",
@@ -162,13 +155,6 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "a4b9662282097d1033c60420dcb83350"
-    },
-    "ttutils": {
-      "Package": "ttutils",
-      "Version": "1.0-1",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "9d2d93c2cc026baee3ce315d15f40d87"
     },
     "xfun": {
       "Package": "xfun",

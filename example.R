@@ -1,3 +1,4 @@
-library(ttutils)
 library(outliers)
-library(minimax)
+
+print(outlier(c(1, 2, 3, 100)))
+
